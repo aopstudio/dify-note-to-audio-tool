@@ -1,0 +1,17 @@
+extra:
+  python:
+    source: provider/note_to_audio.py
+identity:
+  author: aopstudio
+  description:
+    en_US: "Input note names to generate corresponding audio waveform files"
+    zh_Hans: 输入音名，生成对应的音频波形文件
+  icon: icon.svg
+  label:
+    en_US: "Note to Audio Tool"
+    zh_Hans: 音名转音频工具
+  name: note_to_audio
+  tags:
+  - utilities
+tools:
+- tools/note_to_audio.yaml

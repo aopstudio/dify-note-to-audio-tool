@@ -1,0 +1,35 @@
+<svg width="140" height="140" viewBox="30 40 80 90" xmlns="http://www.w3.org/2000/svg">
+  <!-- C4 -->
+  <text x="45" y="65" font-family="system-ui, -apple-system, sans-serif"
+        font-size="26" fill="#333" text-anchor="middle" dominant-baseline="middle">
+    C4
+  </text>
+
+  <!-- Arrow -->
+  <text x="75" y="65" font-family="system-ui, -apple-system, sans-serif"
+        font-size="28" fill="#666" text-anchor="middle" dominant-baseline="middle">
+    →
+  </text>
+
+  <!-- Musical Note -->
+  <text x="100" y="65" font-family="system-ui, -apple-system, sans-serif"
+        font-size="40" fill="#333" text-anchor="middle" dominant-baseline="middle">
+    ♪
+  </text>
+
+  <!-- 7-bar waveform -->
+  <g transform="translate(70,100)">
+    <!-- left side -->
+    <rect x="-30" y="-6"  width="4" height="12" fill="#4F46E5" rx="2"/>
+    <rect x="-20" y="-12" width="4" height="24" fill="#6366F1" rx="2"/>
+    <rect x="-10" y="-18" width="4" height="36" fill="#818CF8" rx="2"/>
+
+    <!-- center -->
+    <rect x="0"   y="-24" width="4" height="48" fill="#A5B4FC" rx="2"/>
+
+    <!-- right side -->
+    <rect x="10"  y="-18" width="4" height="36" fill="#818CF8" rx="2"/>
+    <rect x="20"  y="-12" width="4" height="24" fill="#6366F1" rx="2"/>
+    <rect x="30"  y="-6"  width="4" height="12" fill="#4F46E5" rx="2"/>
+  </g>
+</svg>

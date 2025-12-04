@@ -1,0 +1,122 @@
+identity:
+  name: note_to_audio
+  author: Your Name
+  label:
+    en_US: Note to Audio Synthesizer
+    zh_Hans: 音名转音频合成器
+
+description:
+  human:
+    en_US: "Generate a synthesized WAV audio file from a musical note name (e.g., C4, A#5, Eb3). Supports sine, square, sawtooth, and triangle waveforms."
+    zh_Hans: "根据音乐音名（如 C4、A#5、Eb3）生成合成 WAV 音频文件。支持正弦波、方波、锯齿波和三角波。"
+  llm: "Generate a synthesized audio file from a musical note name using specified waveform and parameters."
+
+parameters:
+  - name: note
+    type: string
+    required: true
+    label:
+      en_US: Musical Note
+      zh_Hans: 音名
+    human_description:
+      en_US: "Note in scientific pitch notation (e.g., C4, A#5, Eb3). Octave range: 0–8."
+      zh_Hans: "科学音高记法中的音名（例如 C4、A#5、Eb3），八度范围 0–8。"
+    llm_description: "The musical note to synthesize, e.g., C4 or A#5."
+    form: llm
+
+  - name: duration
+    type: number
+    required: false
+    default: 0.5
+    min: 0.1
+    max: 10
+    precision: 2
+    label:
+      en_US: Duration (seconds)
+      zh_Hans: 持续时间（秒）
+    human_description:
+      en_US: "Length of the generated note in seconds (0.1 to 10)."
+      zh_Hans: "生成音符的时长（0.1 到 10 秒）。"
+    llm_description: "Duration of the note in seconds."
+    form: llm
+
+  - name: waveform
+    type: select
+    required: false
+    default: sine
+    options:
+      - value: sine
+        label:
+          en_US: Sine Wave
+          zh_Hans: 正弦波
+      - value: square
+        label:
+          en_US: Square Wave
+          zh_Hans: 方波
+      - value: sawtooth
+        label:
+          en_US: Sawtooth Wave
+          zh_Hans: 锯齿波
+      - value: triangle
+        label:
+          en_US: Triangle Wave
+          zh_Hans: 三角波
+    label:
+      en_US: Waveform Type
+      zh_Hans: 波形类型
+    human_description:
+      en_US: "Select the oscillator waveform type: sine, square, sawtooth, or triangle."
+      zh_Hans: "选择振荡器波形类型：正弦波、方波、锯齿波或三角波。"
+    llm_description: "Waveform type: sine, square, sawtooth, or triangle."
+    form: llm
+
+  - name: blur
+    type: number
+    required: false
+    default: 0.05
+    min: 0
+    max: 1
+    precision: 3
+    label:
+      en_US: Blur (Low-pass Filter)
+      zh_Hans: 模糊度（低通滤波）
+    human_description:
+      en_US: "Smoothing factor for audio (0 = no blur, 1 = fully blurred)."
+      zh_Hans: "音频平滑系数（0 = 无模糊，1 = 完全模糊）。"
+    llm_description: "Audio smoothing factor between 0 and 1."
+    form: llm
+
+  - name: decay
+    type: number
+    required: false
+    default: 5.0
+    min: 0
+    max: 20
+    precision: 1
+    label:
+      en_US: Decay Rate
+      zh_Hans: 衰减速率
+    human_description:
+      en_US: "How quickly the sound fades out (higher = faster decay)."
+      zh_Hans: "声音衰减速度（值越大衰减越快）。"
+    llm_description: "Sound decay rate; higher means faster fade-out."
+    form: llm
+
+  - name: volume
+    type: number
+    required: false
+    default: 0.3
+    min: 0.01
+    max: 1
+    precision: 2
+    label:
+      en_US: Volume
+      zh_Hans: 音量
+    human_description:
+      en_US: "Output amplitude level (0.01 to 1.0)."
+      zh_Hans: "输出音量大小（0.01 到 1.0）。"
+    llm_description: "Output volume level between 0.01 and 1.0."
+    form: llm
+extra:
+  python:
+    source: tools/note_to_audio.py

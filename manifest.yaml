@@ -1,0 +1,31 @@
+version: 0.0.1
+type: plugin
+author: "aopstudio"
+name: "note_to_audio"
+label:
+  en_US: "Note to Audio Too"
+  zh_Hans: 音名转音频工具
+created_at: "2025-11-23T08:03:44.658609186Z"
+icon: icon.svg
+description:
+  en_US: "Note name to audio waveform file generation tool. Can be combined with `Iteration` node and `Audio merging tool` to achieve simple composition."
+  zh_Hans: 音名转对应的音频波形文件生成工具，可与迭代结点、音频合并工具组合实现简易作曲
+tags:
+  - "utilities"
+resource:
+  memory: 1048576
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - "provider/note_to_audio.yaml"
+meta:
+  version: 0.0.1
+  arch:
+    - "amd64"
+    - "arm64"
+  runner:
+    language: "python"
+    version: "3.12"
+    entrypoint: "main"
