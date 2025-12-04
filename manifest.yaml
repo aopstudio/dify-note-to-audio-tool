@@ -3,7 +3,7 @@ type: plugin
 author: "aopstudio"
 name: "note_to_audio"
 label:
-  en_US: "Note to Audio Too"
+  en_US: "Note to Audio Tool"
   zh_Hans: 音名转音频工具
 created_at: "2025-11-23T08:03:44.658609186Z"
 icon: icon.svg
